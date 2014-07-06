@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <meta charset="utf-8"> 
+       <title>HCW Trainer</title> 
+
+       <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.css">
+       <!--<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">-->
+       <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+       <link rel="stylesheet" href="css/app.css">
+
+       <script src="cordova.js"></script> 
+       <script src="js/jquery-1.10.2.min.js"></script> 
+       <script src="js/jquery.mobile-1.3.2.min.js"></script>
+       <script src="js/populator.js"></script>
+       <script src="js/functions.js"></script> 
+       <script src="js/actions.js"></script> 
+       
+        
+              
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+           
+    </head>
+    
+    <body>
+        
+        <div data-role="page" id="grouppage" data-theme="f">
+            
+            <div data-role="header" data-theme="a" id="header">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a class="pageicon app"></a> <!-- has the app icon as bg -->
+                            <span>HCWTrainer</span>
+                        </div>
+
+                        <div class="ui-block-b textright">
+                            <a class="toolbar-icon context-menu" href="#quickMenu" 
+                               data-rel="popup" data-inline="true" data-transition="pop">&nbsp;</a>
+   
+                            <a href="login.html" class="toolbar-icon profile">Login</a>
+                             
+                            <a href="profile.html" class="toolbar-icon notification">Notifications</a>
+                        </div>
+                        <div data-role="popup" id="quickMenu" data-theme="d">
+                                 <ul data-role="listview" data-theme="d" >
+                                     <li data-icon="false"><a href="index.html" id="main">Main Menu</a></li>
+                                     <li data-icon="false"><a href="help.html" id="help">Help</a></li>
+                                     <li data-icon="false"><a href="login.html" id="gator">Log In</a></li>
+                                     <li data-icon="false"><a onclick="quitApp(); return false;" href="" id="quit">Quit</a></li>
+                                 </ul>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+            <div data-role="header" data-theme="f" id="pageheader">
+                <div class="ui-grid-a">
+                    
+                    <div class="ui-block-a">
+                        <a class="pageicon menu"></a> <!-- has the home icon as bg -->
+                        <span>Facility Members</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div data-role="content" class="">
+
+                    <!--<h3 class="pagetitle">Log In</h3>-->
+
+                    <div class="centerpage width50"  >
+                            <h3 class="pagetitle">Select Group Members</h3>
+                            
+                            <div class="margintop10 marginbottom10" >
+                                <ul id="membersList" data-role="listview"  data-theme="d">                                              
+                                    <!-- Members list will be inserted  -->
+                                </ul>                            
+                                
+                                <a id="sessionok" class="floatright margintop20" onclick="groupLogin()" style="" 
+                                     data-theme="d" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="true" data-mini="true">OK</a>
+                            </div>
+                            
+                    </div>
+                    
+                    
+                    
+                    <!--    FOOTER  -->
+            <div data-role="footer" data-theme="a" id="footer" class="" data-position="fixed">
+                    <div class="ui-grid-b">
+                        <div class="ui-block-b" id="toolbar-actions">
+                                &nbsp;
+                        </div>
+                        <div class="ui-block-b">
+                            <!--<h4>FACILITY</h4>-->
+                            <h5 class="facname">FACILITY NAME</h5>
+                            <div class="address">
+                                Plot 2-5, Trans Amadi, <br/>
+                                Port Hacourt,<br/>
+                                Nigeria.
+                            </div>
+                        </div>
+                
+                        <div class="ui-block-c" id="toolbar-actions">
+                            <h5 class="facname">SUPERVISOR</h5>
+                            <h5 class="facname weightless" style="margin-top: 0px !important;">FIRSTNAME I. LASTNAME</h5>
+                            <div class="address ">
+                                08012345678
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--    FOOTER  -->
+            
+            
+                  
+            </div><!--content-->
+            
+            
+            
+        </div> 
+        <!--end of login page-->
+        
+    </body>
+</html>

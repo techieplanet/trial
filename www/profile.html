@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <meta charset="utf-8"> 
+       <title>HCW Trainer</title> 
+
+       <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.css">
+       <!--<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">-->
+       <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+       <link rel="stylesheet" href="css/app.css">
+
+       <script src="cordova.js"></script> 
+       <script src="js/jquery-1.10.2.min.js"></script> 
+       <script src="js/jquery.mobile-1.3.2.min.js"></script>
+       <script src="js/populator.js"></script>
+       <script src="js/functions.js"></script> 
+       <script src="js/actions.js"></script> 
+              
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+    </head>
+    
+    <body>
+        
+        <div data-role="page" id="profilepage" data-theme="f">
+            
+            <div data-role="header" data-theme="a" id="header">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a class="pageicon app"></a> <!-- has the app icon as bg -->
+                            <span>HCWTrainer</span>
+                        </div>
+
+                        <div class="ui-block-b textright">
+                            
+                            <a class="toolbar-icon context-menu" href="#quickMenu" 
+                               data-rel="popup" data-inline="true" data-transition="pop">&nbsp;</a>
+   
+                            <a href="login.html" class="toolbar-icon profile">Login</a>
+                             
+                            <a href="profile.html" class="toolbar-icon notification">Notifications</a>
+                        </div>
+                        <div data-role="popup" id="quickMenu" data-theme="d">
+                                 <ul data-role="listview" data-theme="d" >
+                                     <li data-icon="false"><a href="index.html" id="main">Main Menu</a></li>
+                                     <li data-icon="false"><a href="help.html" id="help">Help</a></li>
+                                     <li data-icon="false"><a href="login.html" id="gator">Log In</a></li>
+                                     <li data-icon="false"><a onclick="quitApp(); return false;" href="" id="quit">Quit</a></li>
+                                 </ul>
+                        </div>
+                    </div>
+            </div>
+            
+            <div data-role="header" data-theme="f" id="pageheader">
+                <div class="ui-grid-a">
+                    
+                    <div class="ui-block-a">
+                        <a class="pageicon menu"></a> <!-- has the home icon as bg -->
+                        <span>My Profile</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div data-role="content" class="">
+                
+                <div>
+                    <h3 class="pagetitle">
+                        John Doe Smith
+                    </h3>
+                    
+<!--                    <ul data-role="listview"  data-theme="d">      
+                        <li class="" data-icon="false" >
+                            <a>John Doe Smith</a>
+                            <span class=ui-li-count>Log Out</span>
+                        </li>
+                    </ul>-->
+                    
+                    <ul data-role="listview"  data-theme="d" data-dividertheme="b">      
+                        
+                        <li class="" data-icon="false" data-role="list-divider">
+                            <a>Usage Information</a>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <a>Number of Trainings Taken</a>
+                            <span class=ui-li-count>2</span>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <a>Number of Trainings Due</a>
+                            <span class=ui-li-count>3</span>
+                        </li>
+                                                
+                        <li class="" data-icon="false">
+                            <a>Number of Tests Passed</a>
+                            <span class=ui-li-count>4</span>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <a>Number of Tests Failed</a>
+                            <span class=ui-li-count>5</span>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <br/><br/>
+                
+                <div class="width40 floatleft margintop40 marginbottom30" style="margin-left: 10px;" data-dividertheme="b">
+                    <ul data-role="listview"  data-theme="d">      
+                        
+                        <li class="" data-icon="false" data-role="list-divider">
+                            <a>Personal Information</a>
+                        </li>
+                        
+                        <!--the edit button-->
+                        <li class="textright" data-icon="false" data-role="list-divider">
+                            <a id="sessionok" class="" onclick="sessionPick()" data-theme="d" data-role="button" 
+                               data-icon="edit" data-iconpos="right" data-inline="true" data-mini="true">Edit</a>
+                        </li>
+                      
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="surname">Surname</label>
+                                    <input type="text" name="surname" id="surname" value="John" disabled="disabled" />
+                            </div>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" id="firstname" value="Doe" disabled="disabled"/>
+                            </div>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="middlename">Middle Name</label>
+                                    <input type="text" name="middlename" id="middlename" value="Smith" disabled="disabled"/>
+                            </div>
+                        </li>
+                        
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="cadre">Cadre</label>
+                                    <input type="text" name="cadre" id="cadre" value="CHEW" disabled="disabled"/>
+                            </div>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" id="phone" value="08012345678" disabled="disabled"/>
+                            </div>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" id="email" value="john@example.com" disabled="disabled"/>
+                            </div>
+                        </li>
+                        
+                        <li class="" data-icon="false">
+                            <div data-role="fieldcontain" class="nomargin">
+                                    <label for="gender">Gender</label>
+                                    <input type="text" name="gender" id="gender" value="Male" disabled="disabled"/>
+                            </div>
+                        </li>
+                       
+                    </ul>
+                </div><!--personal info-->
+		
+                
+                
+                <!--message centtre-->
+                <div class="width40 floatright margintop40 marginbottom30" style="margin-right: 10px;" data-dividertheme="b">
+                    <ul data-role="listview"  data-theme="d">      
+                        
+                        <li class="" data-icon="false" data-role="list-divider">
+                            <a>Message Centre</a>
+                        </li>
+                        
+                        <!--the edit button-->
+<!--                        <li class="textright" data-icon="false" data-role="list-divider">
+                            <a id="sessionok" class="" onclick="sessionPick()" data-theme="d" data-role="button" 
+                               data-icon="edit" data-iconpos="right" data-inline="true" data-mini="true">Edit</a>
+                        </li>-->
+                      
+                        
+                        <li class="" data-icon="false">
+                            <div class="message">
+                                <span class="notice">Due training Session</span><br/>
+                                <span class="title">EmOC - Antenatal Care</span><br>
+                                <span class="mydate">Due Date: 01-01-2014</span>
+                            </div>
+                            
+                            <div class="message">
+                                <span class="notice">Test Session Pending</span><br/>
+                                <span class="title">EmOC - Antenatal Care</span><br/>
+                                <span class="mydate">Log Date: 01-01-2014</span>
+                            </div>
+                        </li>
+                        
+                        
+                       
+                    </ul>
+                </div><!--personal info-->
+                
+                
+            </div><!-- content -->
+            
+            
+            <!--    FOOTER  -->
+            <div data-role="footer" data-theme="a" id="footer" class="" >
+                    <div class="ui-grid-b">
+                        <div class="ui-block-b" id="toolbar-actions">
+                                &nbsp;
+                        </div>
+                        <div class="ui-block-b">
+                            <!--<h4>FACILITY</h4>-->
+                            <h5 class="facname">FACILITY NAME</h5>
+                            <div class="address">
+                                Plot 2-5, Trans Amadi, <br/>
+                                Port Hacourt,<br/>
+                                Nigeria.
+                            </div>
+                        </div>
+                
+                        <div class="ui-block-c" id="toolbar-actions">
+                            <h5 class="facname">SUPERVISOR</h5>
+                            <h5 class="facname weightless" style="margin-top: 0px !important;">FIRSTNAME I. LASTNAME</h5>
+                            <div class="address ">
+                                08012345678
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--    FOOTER  -->
+
+        </div> 
+        <!--end of main page-->
+        
+        
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>HCW Trainer</title> 
+
+       <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.css">
+       <!--<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">-->
+       <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+       <link rel="stylesheet" href="css/app.css">
+
+       <script src="cordova.js"></script> 
+       <script src="js/jquery-1.10.2.min.js"></script> 
+       <script src="js/jquery.mobile-1.3.2.min.js"></script>
+       <script src="js/populator.js"></script>
+       <script src="js/functions.js"></script> 
+       
+        
+              
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+    </head>
+    
+    <body>
+        
+        <div data-role="page" id="trainingpage" data-theme="f">
+            
+            <div data-role="header" data-theme="a" id="header">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a class="pageicon app"></a> <!-- has the app icon as bg -->
+                            <span>HCWTrainer</span>
+                        </div>
+
+                        <div class="ui-block-b textright">
+                            
+                            <a class="toolbar-icon context-menu" href="#quickMenu" 
+                               data-rel="popup" data-inline="true" data-transition="pop">&nbsp;</a>
+   
+                            <a href="login.html" class="toolbar-icon profile">Login</a>
+                             
+                            <a href="profile.html" class="toolbar-icon notification">Notifications</a>
+                        </div>
+                        <div data-role="popup" id="quickMenu" data-theme="d">
+                                 <ul data-role="listview" data-theme="d" >
+                                     <li data-icon="false"><a href="index.html" id="main">Main Menu</a></li>
+                                     <li data-icon="false"><a href="help.html" id="help">Help</a></li>
+                                     <li data-icon="false"><a href="login.html" id="gator">Log In</a></li>
+                                     <li data-icon="false"><a onclick="quitApp(); return false;" href="" id="quit">Quit</a></li>
+                                 </ul>
+                        </div>
+                    </div>
+            </div>
+            
+            <div data-role="header" data-theme="f" id="pageheader">
+                <div class="ui-grid-a">
+                    
+                    <div class="ui-block-a">
+                        <a class="pageicon menu"></a> <!-- has the home icon as bg -->
+                        <span>Video (EmOC)</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div data-role="content" class="">         
+                <div id="videopad" class="videopad marginbottom30">
+                    <h3 class="videotitle"><!-- Training title comes here --></h3>
+                    <video  id="videoscreen"   controls  poster="img/refer_sick_baby.png">
+                        <source src="android.resource://com.tp.hcwtrainer/raw/sample" type="video/mp4"/>
+                    </video>
+                    
+                    <div id="nextprev" class="theme-b" style="border-left: 0; border-right: 0; float:left; width: 100%;">
+                        <a href="#" class="hidden" id="prevvideo" onclick="prevQuestion(); return false;" data-icon="arrow-r" data-theme="e" data-inline="true">
+                            <img src="img/arrow-left.png">
+                            <span>Previous</span>
+                        </a>
+                        
+                        <a href="#" class="hidden" id="nextvideo" class="" onclick="nextQuestion(); return false;" style="float: right;" data-icon="arrow-r" data-inline="true">
+                            <img src="img/arrow-right.png" />
+                            <span>Next</span>
+                        </a>
+                    </div> 
+                    
+                </div>
+                
+                <div class="links" data-theme="b">
+                    <div class="link" >
+                        <a href="" class="actionlink guide trans">Training Guide</a>
+                        <!--<span></span>-->
+                    </div>
+                    
+                    <div class="link">
+                        <a href="jobaid.html" class="actionlink aid trans">Job Aid</a>
+                    </div>
+                    
+                    <div class="link">
+                        <a href="faq.html" class="actionlink faq trans">FAQ</a>
+                    </div>
+                    
+                </div>
+                
+                
+                 <!--    the video splash    -->
+                <div data-role="popup" id="vsPopup" data-theme="d" data-overlay-theme="f" data-dismissible="false">
+                    <!--<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>-->
+                    
+                    <img src="img/video_splash.png" style="margin: auto;">
+                    
+                </div>
+                <!--    the video splash    -->
+                
+                
+                
+                <!--    FOOTER  -->
+            <div data-role="footer" data-theme="a" id="footer" class="" data-position="fixed" >
+                    <div class="ui-grid-b">
+                        <div class="ui-block-b" id="toolbar-actions">
+                                &nbsp;
+                        </div>
+                        <div class="ui-block-b">
+                            <!--<h4>FACILITY</h4>-->
+                            <h5 class="facname">FACILITY NAME</h5>
+                            <div class="address">
+                                Plot 2-5, Trans Amadi, <br/>
+                                Port Hacourt,<br/>
+                                Nigeria.
+                            </div>
+                        </div>
+                
+                        <div class="ui-block-c" id="toolbar-actions">
+                            <h5 class="facname">SUPERVISOR</h5>
+                            <h5 class="facname weightless" style="margin-top: 0px !important;">FIRSTNAME I. LASTNAME</h5>
+                            <div class="address ">
+                                08012345678
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!--    FOOTER  -->
+		
+            </div><!-- content -->
+            
+
+                
+                
+        </div> 
+        <!--end of main page-->
+        
+        
+        
+        
+        
+    </body>
+</html>

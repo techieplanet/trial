@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <meta charset="utf-8"> 
+       <title>HCW Trainer</title> 
+
+       <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.css">
+       <!--<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">-->
+       <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+       <link rel="stylesheet" href="css/app.css">
+
+       <script src="cordova.js"></script> 
+       <script src="js/jquery-1.10.2.min.js"></script> 
+       <script src="js/jquery.mobile-1.3.2.min.js"></script>
+       <script src="js/populator.js"></script>
+       <script src="js/functions.js"></script> 
+       <script src="js/helper.js"></script> 
+        
+              
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+       
+       <script>
+           //alert("this is the index page");
+           document.addEventListener("deviceready", onDeviceReady, false);
+            //var networkState = navigator.connection.type;
+            
+            function onDeviceReady(){
+                //checkConnection();
+                openDb();
+            }
+
+            
+       </script>
+           
+    </head>
+    
+    <body>
+        
+        <div data-role="page" id="printdbpage" data-theme="f">
+            
+            <div data-role="header" data-theme="a" id="header" data-position="fixed">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a class="pageicon app"></a> <!-- has the app icon as bg -->
+                            <span>HCWTrainer</span>
+                        </div>
+
+
+                        <div class="ui-block-b textright" id="toolbar-actions">
+                            <a class="toolbar-icon context-menu" href="#quickMenu" 
+                               data-rel="popup" data-inline="true" data-transition="pop">&nbsp;</a>
+                            <a id="toolbar-login" href="login.html" class="toolbar-icon profile">Login</a>
+                            <a id="toolbar-logout" href="login.html" class="hidden toolbar-icon profile">Log Out</a>
+                            <a href="profile.html" class="toolbar-icon notification">Notifications</a>
+                        </div>
+                        <div data-role="popup" id="quickMenu" data-theme="d">
+                            <ul data-role="listview" data-theme="d" >
+                                <li data-icon="false"><a href="index.html" id="main">Main Menu</a></li>
+                                <li data-icon="false"><a href="help.html" id="help">Help</a></li>
+                                <li id="quick-login" data-icon="false"><a href="login.html" id="gator">Log In</a></li>
+                                <!--<li class="noborder">&nbsp;</li>-->
+                                <li data-icon="false"><a onclick="quitApp(); return false;" href="" id="quit">Quit</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+            </div>
+            
+            <div data-role="header" data-theme="f" id="pageheader" >
+                <div class="ui-grid-a">
+                    
+                    <div class="ui-block-a">
+                        <a class="pageicon menu"></a> <!-- has the home icon as bg -->
+                        <span>DB Printer</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div data-role="content" class="">
+                <div data-theme="b">&nbsp;</div>
+                
+                <!------    ROW 1   -------->
+                <div class="iconrow" id="datacontainer">
+                    <!--the db records wil come here-->
+                </div>
+                
+                
+            </div><!--content-->
+            
+            
+                
+        </div> 
+        <!--end of main page-->
+        
+       
+        
+    </body>
+</html>
